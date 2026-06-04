@@ -1,0 +1,92 @@
+@import "tailwindcss";
+
+:root {
+  --background: #F6F0DB;
+  --foreground: #29220a;
+}
+
+@theme inline {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+
+  /* Official Lucia Dulce Brand Colors (from luciadulce.com AutomaticCSS) */
+  --color-cream: #F6F0DB;           /* --base: main site background */
+  --color-chocolate: #29220a;        /* --base-ultra-dark: heading/body text */
+  --color-brand: #680D1F;            /* --primary: official brand maroon */
+  --color-brand-hover: #760f23;      /* --primary-hover */
+  --color-maroon-dark: #710e22;      /* --primary-dark */
+  --color-maroon-deep: #2d060e;      /* --primary-ultra-dark */
+  --color-gold: #8f7824;             /* --base-semi-dark: dark gold accent */
+  --color-gold-light: #dbc470;       /* --base-semi-light: warm golden */
+  --color-gold-dark: #66551a;        /* --base-dark */
+  --color-pink: #f7bbc7;             /* --primary-light */
+  --color-pink-light: #fce8ec;       /* --primary-ultra-light */
+
+  /* Neutral / Background Scale */
+  --color-warm-white: #faf7eb;       /* --base-ultra-light */
+  --color-warm-gray: #f0e6c2;        /* --base-light */
+  --color-medium-gray: #a6a6a6;      /* --neutral-semi-light */
+  --color-dark-gray: #595959;        /* --neutral-semi-dark */
+
+  /* Fonts */
+  --font-heading: var(--font-playfair);
+  --font-sans: var(--font-inter);
+}
+
+body {
+  background: var(--background);
+  color: var(--foreground);
+  font-family: var(--font-inter), ui-sans-serif, system-ui, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+  width: 6px;
+}
+::-webkit-scrollbar-track {
+  background: #F6F0DB;
+}
+::-webkit-scrollbar-thumb {
+  background: #8f7824;
+  border-radius: 3px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #66551a;
+}
+
+/* Smooth scroll */
+html {
+  scroll-behavior: smooth;
+}
+
+/* Selection color */
+::selection {
+  background: #f7bbc7;
+  color: #29220a;
+}
+
+/* Hide scrollbar utility */
+.scrollbar-hide {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+.scrollbar-hide::-webkit-scrollbar {
+  display: none;
+}
+
+/* Transition duration 400ms utility */
+.transition-400 {
+  transition-duration: 400ms;
+}
+
+/* Locations top bar marquee */
+@keyframes locations-marquee {
+  0% { transform: translateX(0); }
+  100% { transform: translateX(-33.333%); }
+}
+.animate-locations-marquee {
+  animation: locations-marquee 18s linear infinite;
+  width: max-content;
+}
