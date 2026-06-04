@@ -1,0 +1,6 @@
+{
+  "framework": "nextjs",
+  "installCommand": "cd lucia-dulce && npm install",
+  "buildCommand": "cd lucia-dulce && npm run build",
+  "outputDirectory": "lucia-dulce/.next"
+}
