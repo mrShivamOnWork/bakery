@@ -44,7 +44,7 @@ export default function BrandStory() {
             {/* Large main image */}
             <div className="absolute top-0 left-0 w-[72%] h-[85%] rounded-3xl overflow-hidden shadow-2xl shadow-chocolate/15">
               <Image
-                src="https://images.unsplash.com/photo-1464349153735-7db50ed83c84?w=900&q=85"
+                src="https://images.unsplash.com/photo-1464349153735-7db50ed83c84?w=900&q=85&auto=format&fit=crop"
                 alt="Lucia Dulce artisan bakers at work"
                 fill
                 className="object-cover"
@@ -62,8 +62,8 @@ export default function BrandStory() {
               className="absolute bottom-0 right-0 w-[46%] h-[54%] rounded-2xl overflow-hidden shadow-xl shadow-chocolate/15 border-4 border-cream"
             >
               <Image
-                src="https://images.unsplash.com/photo-1509440159596-0249088772ff?w=600&q=85"
-                alt="Freshly baked ensaymada"
+                src="https://images.unsplash.com/photo-1555507036-ab1f4038808a?w=600&q=85&auto=format&fit=crop"
+                alt="Freshly baked pastries"
                 fill
                 className="object-cover"
                 sizes="(max-width: 1024px) 40vw, 20vw"

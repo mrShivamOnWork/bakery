@@ -12,19 +12,12 @@ const stagger = {
 
 const fadeUp = {
   hidden: { opacity: 0, y: 32 },
-  visible: { opacity: 1, y: 0, transition: { duration: 0.7, ease: [0.22, 1, 0.36, 1] as const } },
+  visible: { opacity: 1, y: 0, transition: { duration: 0.6, ease: [0.22, 1, 0.36, 1] as const } },
 };
 
 const scaleIn = {
   hidden: { opacity: 0, scale: 0.88 },
-  visible: { opacity: 1, scale: 1, transition: { duration: 0.9, ease: [0.22, 1, 0.36, 1] as const } },
-};
-
-const floatAnimation = {
-  animate: {
-    y: [-10, 10, -10],
-    transition: { duration: 7, repeat: Infinity, ease: "easeInOut" as const },
-  },
+  visible: { opacity: 1, scale: 1, transition: { duration: 0.75, ease: [0.22, 1, 0.36, 1] as const } },
 };
 
 const stats = [
@@ -36,8 +29,7 @@ const stats = [
 export default function HeroSection() {
   const ref = useRef<HTMLElement>(null);
   const { scrollYProgress } = useScroll({ target: ref, offset: ["start start", "end start"] });
-  const bgY = useTransform(scrollYProgress, [0, 1], ["0%", "30%"]);
-  const opacity = useTransform(scrollYProgress, [0, 0.7], [1, 0]);
+  const bgY = useTransform(scrollYProgress, [0, 1], ["0%", "15%"]);
 
   return (
     <section ref={ref} className="relative min-h-screen bg-cream overflow-hidden flex items-center">
@@ -57,10 +49,7 @@ export default function HeroSection() {
         }}
       />
 
-      <motion.div
-        style={{ opacity }}
-        className="relative w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-32 pb-20 md:pt-36 md:pb-24"
-      >
+      <div className="relative w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-32 pb-20 md:pt-36 md:pb-24">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-4 items-center">
           {/* ── LEFT: Text content ─────────────────────────── */}
           <motion.div
@@ -171,16 +160,16 @@ export default function HeroSection() {
                 animate="visible"
                 className="absolute inset-10 rounded-full overflow-hidden shadow-2xl shadow-chocolate/20 ring-4 ring-white/50"
               >
-                <motion.div variants={floatAnimation} animate="animate" className="absolute inset-0">
+                <div className="absolute inset-0">
                   <Image
-                    src="https://images.unsplash.com/photo-1535141192574-5d4897c12636?w=900&q=90"
+                    src="https://images.unsplash.com/photo-1535141192574-5d4897c12636?w=900&q=90&auto=format&fit=crop"
                     alt="Lucia Dulce Premium Celebration Cake"
                     fill
                     className="object-cover"
                     priority
                     sizes="(max-width: 640px) 220px, (max-width: 1024px) 280px, 360px"
                   />
-                </motion.div>
+                </div>
               </motion.div>
 
               {/* Floating badge: Best Seller */}
@@ -241,7 +230,7 @@ export default function HeroSection() {
             className="w-px h-10 bg-gradient-to-b from-medium-gray/50 to-transparent"
           />
         </motion.div>
-      </motion.div>
+      </div>
     </section>
   );
 }

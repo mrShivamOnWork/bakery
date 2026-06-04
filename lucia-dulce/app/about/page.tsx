@@ -50,7 +50,15 @@ export default function AboutPage() {
         {/* Hero */}
         <section className="relative bg-brand py-24 md:py-36 overflow-hidden">
           <div className="absolute inset-0">
-            <div className="absolute inset-0 bg-gradient-to-br from-brand via-maroon-dark to-maroon-deep opacity-90" />
+            <Image
+              src="https://images.unsplash.com/photo-1464349153735-7db50ed83c84?w=1600&q=85&auto=format&fit=crop"
+              alt="Lucia Dulce bakery kitchen"
+              fill
+              className="object-cover object-center"
+              priority
+              sizes="100vw"
+            />
+            <div className="absolute inset-0 bg-gradient-to-br from-brand/95 via-maroon-dark/90 to-maroon-deep/95" />
             <div
               className="absolute inset-0 opacity-[0.06]"
               style={{

@@ -9,7 +9,7 @@ const categories = [
     slug: "yema-cakes",
     name: "Yema Cakes",
     tagline: "Our signature — the taste that started it all",
-    image: "https://images.unsplash.com/photo-1571115764595-644a1f56a55c?w=800&q=85",
+    image: "https://images.unsplash.com/photo-1571115764595-644a1f56a55c?w=800&q=85&auto=format&fit=crop",
     accent: "from-brand/80 to-maroon-deep/90",
     count: "3 varieties",
   },
@@ -17,7 +17,7 @@ const categories = [
     slug: "bento-cakes",
     name: "Bento Cakes",
     tagline: "4-inch personal cakes perfect as gifts",
-    image: "https://images.unsplash.com/photo-1563729784474-d77dbb933a9e?w=800&q=85",
+    image: "https://images.unsplash.com/photo-1563729784474-d77dbb933a9e?w=800&q=85&auto=format&fit=crop",
     accent: "from-chocolate/70 to-chocolate/90",
     count: "5 flavors",
   },
@@ -25,7 +25,7 @@ const categories = [
     slug: "premium-cakes",
     name: "Premium Cakes",
     tagline: "Show-stopping cakes for every celebration",
-    image: "https://images.unsplash.com/photo-1578985545062-69928b1d9587?w=800&q=85",
+    image: "https://images.unsplash.com/photo-1578985545062-69928b1d9587?w=800&q=85&auto=format&fit=crop",
     accent: "from-maroon-deep/75 to-chocolate/90",
     count: "9 varieties",
   },
@@ -33,7 +33,7 @@ const categories = [
     slug: "ensaymada",
     name: "Ensaymada",
     tagline: "Pillowy soft, baked fresh every morning",
-    image: "https://images.unsplash.com/photo-1509440159596-0249088772ff?w=800&q=85",
+    image: "https://images.unsplash.com/photo-1509440159596-0249088772ff?w=800&q=85&auto=format&fit=crop",
     accent: "from-gold-dark/70 to-chocolate/85",
     count: "8 flavors",
   },
@@ -121,16 +121,27 @@ export default function CategoryGrid() {
         >
           <Link
             href="/menu?category=pastries"
-            className="group relative flex items-center justify-between bg-warm-gray rounded-2xl px-8 py-6 overflow-hidden hover:bg-warm-gray/70 transition-colors border border-chocolate/5 hover:border-gold/20"
+            className="group relative block rounded-2xl overflow-hidden shadow-md hover:shadow-2xl hover:shadow-chocolate/20 transition-all duration-500 hover:-translate-y-1"
+            style={{ height: "160px" }}
           >
-            <div className="relative z-10">
-              <p className="text-[10px] font-semibold uppercase tracking-widest text-gold mb-1">Daily Fresh</p>
-              <h3 className="font-heading font-bold text-chocolate text-xl">Pastries & Rolls</h3>
-              <p className="text-medium-gray text-sm mt-0.5">Cinnamon buns, cheese bars, crinkles & more</p>
+            <Image
+              src="https://images.unsplash.com/photo-1555507036-ab1f4038808a?w=1400&q=85&auto=format&fit=crop"
+              alt="Pastries & Rolls"
+              fill
+              className="object-cover group-hover:scale-105 transition-transform duration-700 ease-out"
+              sizes="(max-width: 640px) 100vw, 90vw"
+            />
+            <div className="absolute inset-0 bg-gradient-to-r from-chocolate/80 via-chocolate/50 to-transparent" />
+            <div className="absolute inset-0 flex items-center justify-between px-8">
+              <div className="relative z-10">
+                <p className="text-[10px] font-semibold uppercase tracking-widest text-gold mb-1">Daily Fresh</p>
+                <h3 className="font-heading font-bold text-cream text-xl">Pastries & Rolls</h3>
+                <p className="text-cream/70 text-sm mt-0.5">Cinnamon buns, cheese bars, crinkles & more</p>
+              </div>
+              <span className="relative z-10 text-cream font-bold text-sm uppercase tracking-wide inline-flex items-center gap-2 group-hover:translate-x-1 transition-transform">
+                View All →
+              </span>
             </div>
-            <span className="relative z-10 text-brand font-bold text-sm uppercase tracking-wide group-hover:gap-3 inline-flex items-center gap-2 group-hover:translate-x-1 transition-transform">
-              View All →
-            </span>
           </Link>
         </motion.div>
       </div>
